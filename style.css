@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root {
+    --bg-gradient: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+    --card-bg: #fff;
+    --heading-color: hsl(238, 29%, 16%);
+    --actived-question-color: hsl(238, 29%, 16%);
+    --question-color: hsl(237, 12%, 33%);
+    --hover-question-color: hsl(14, 88%, 65%);
+    --answer-color: hsl(240, 6%, 50%);
+    --underline-box: hsl(240, 5%, 91%);
+}
+
+* {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    padding: 0 5rem;
+    background: var(--bg-gradient) no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 500px;
+    max-width: 900px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    display: flex;
+    align-items: center;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: -48rem 65%;
+    position: relative;
+}
+
+.images {
+    max-width: 450px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.desktop-inner {
+    position: relative;
+    top: 15%;
+    left: -18%;
+    z-index: 1;
+}
+
+.mobile-inner {
+    display: none;
+}
+
+.outer {
+    position: absolute;
+    top: 200px;
+    left: -100px;
+    z-index: 2;
+}
+
+.faq {
+    margin-top: 5rem;
+    max-width: 350px;
+    width: 350px;
+    padding-right: 2rem;
+    height: 400px;
+}
+
+.faq-header h1 {
+    color: var(--heading-color);
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    cursor: default;
+}
+
+.faq-content {
+    height: 320px;
+    overflow: scroll;
+}
+
+.faq-content::-webkit-scrollbar {
+    display: none;
+}
+
+.bloc {
+    border-bottom: 1px solid var(--underline-box);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.question {
+    color: var(--question-color);
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.question:hover {
+    color: var(--hover-question-color);
+}
+
+.icon {
+    margin-left: 1rem;
+}
+
+.answer {
+    margin-top: 0.5rem;
+    color: var(--answer-color);
+    display: none;
+    cursor: default;
+}
+
+.open {
+    display: block;
+}
+
+.attribution {
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: #fff;
+}
+
+@media only screen and (max-width: 840px) {
+
+    body {
+        padding: 0 1rem;
+    }
+
+    .card {
+        margin-top: 7rem;
+        height: 450px;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(./images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+    }
+
+    .images {
+        display: flex;
+        justify-content: center;
+    }
+
+    .desktop-inner {
+        display: none;
+    }
+    
+    .mobile-inner {
+        display: block;
+        position: absolute;
+        transform: translate(-12.5rem,-55%);
+    }
+
+    .outer {
+        display: none;
+    }
+
+    .faq {
+        max-width: 400px;
+        width: 100%;
+        max-height: 320px;
+        margin-top: 10rem;
+        padding-right: 0rem;
+    }
+    .faq-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+    .faq-content {
+        height: 230px;
+        padding: 0 2rem;
+        overflow: scroll;
+    }
+    .bloc {
+        border-bottom: 1px solid var(--underline-box);
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+    .question {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    .question:hover {
+        color: var(--question-color);
+    }
+    .answer {
+        font-size: 0.8rem;
+    }
+    .attribution {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-height: 620px) and (max-width: 320px) {
+
+    .card {
+        height: 400px;
+        max-width: 500px;
+    }
+
+    .faq {
+        max-width: 400px;
+        width: 100%;
+        max-height: 280px;
+        margin-top: 10rem;
+        padding-right: 0rem;
+    }
+
+    .faq-header h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .faq-content {
+        height: 200px;
+        padding: 0 2rem;
+        overflow: scroll;
+    }
+
+}
